@@ -115,7 +115,7 @@ const Login = () => {
               <Button
                 type="button"
                 variant="outline"
-                className="w-full py-5 text-base font-medium border-2 hover:bg-gray-50 transition-all duration-200"
+                className="w-full py-5 text-base font-medium border-2 hover:bg-orange-200 hover:border-orange-300 hover:text-black transition-all duration-200"
                 onClick={handleGoogleLogin}
               >
                 <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">

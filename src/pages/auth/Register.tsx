@@ -65,17 +65,17 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+    <div className="min-h-screen flex items-center justify-center bg-auth-gradient p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
         className="w-full max-w-md"
       >
-        <Card className="border-none shadow-lg">
+        <Card className="border-none shadow-xl bg-white/95 backdrop-blur-sm">
           <CardHeader className="space-y-1 text-center">
-            <CardTitle className="text-2xl">রেজিস্টার করুন</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-2xl font-bold text-primary">রেজিস্টার করুন</CardTitle>
+            <CardDescription className="text-muted">
               নতুন অ্যাকাউন্ট তৈরি করুন
             </CardDescription>
           </CardHeader>
@@ -88,7 +88,7 @@ const Register = () => {
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   required
-                  className="w-full"
+                  className="w-full bg-white/50 border-gray-200 focus:border-primary focus:ring-primary"
                 />
                 <Input
                   type="text"
@@ -96,7 +96,7 @@ const Register = () => {
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   required
-                  className="w-full"
+                  className="w-full bg-white/50 border-gray-200 focus:border-primary focus:ring-primary"
                 />
                 <Input
                   type="email"
@@ -104,7 +104,7 @@ const Register = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full"
+                  className="w-full bg-white/50 border-gray-200 focus:border-primary focus:ring-primary"
                 />
                 <Input
                   type="password"
@@ -112,13 +112,13 @@ const Register = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full"
+                  className="w-full bg-white/50 border-gray-200 focus:border-primary focus:ring-primary"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full py-5 text-base font-medium transition-all duration-200 hover:opacity-90"
+                className="w-full py-5 text-base font-medium bg-primary hover:bg-primary-hover text-white transition-all duration-200"
                 disabled={loading}
               >
                 {loading ? "লোড হচ্ছে..." : "রেজিস্টার"}
@@ -129,7 +129,7 @@ const Register = () => {
                   <Separator className="w-full" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-background px-2 text-muted-foreground">
+                  <span className="bg-white px-2 text-muted">
                     অথবা
                   </span>
                 </div>
@@ -138,7 +138,7 @@ const Register = () => {
               <Button
                 type="button"
                 variant="outline"
-                className="w-full py-5 text-base font-medium"
+                className="w-full py-5 text-base font-medium border-2 hover:bg-gray-50 transition-all duration-200"
                 onClick={handleGoogleLogin}
               >
                 <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
@@ -162,12 +162,12 @@ const Register = () => {
                 গুগল দিয়ে রেজিস্টার করুন
               </Button>
 
-              <div className="text-center text-sm text-muted-foreground mt-6">
+              <div className="text-center text-sm text-muted mt-6">
                 ইতিমধ্যে অ্যাকাউন্ট আছে?{" "}
                 <Button
                   variant="link"
                   onClick={() => navigate("/auth/login")}
-                  className="p-0 h-auto font-normal text-sm"
+                  className="p-0 h-auto font-normal text-sm text-secondary hover:text-secondary-hover"
                 >
                   লগইন করুন
                 </Button>

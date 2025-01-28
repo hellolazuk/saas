@@ -28,32 +28,38 @@ export default {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
+          DEFAULT: '#1a365d', // Dark Blue/Navy
+          hover: '#2d4a7c',
+          foreground: '#ffffff'
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))'
+          DEFAULT: '#ff6b35', // Soft Orange
+          hover: '#ff8659',
+          foreground: '#ffffff'
+        },
+        success: {
+          DEFAULT: '#22c55e', // Bright Green
+          foreground: '#ffffff'
         },
         destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))'
+          DEFAULT: '#ef4444',
+          foreground: '#ffffff'
         },
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
+          DEFAULT: '#6b7280', // Neutral Gray
+          foreground: '#9ca3af'
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
+          DEFAULT: '#ff6b35', // Soft Orange
+          foreground: '#ffffff'
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))'
+          DEFAULT: '#ffffff',
+          foreground: '#1f2937'
         },
         card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))'
+          DEFAULT: '#ffffff',
+          foreground: '#1f2937'
         }
       },
       borderRadius: {
@@ -75,6 +81,10 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'auth-gradient': 'linear-gradient(to right bottom, #1a365d, #2d4a7c)'
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

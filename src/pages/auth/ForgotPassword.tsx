@@ -33,17 +33,17 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+    <div className="min-h-screen flex items-center justify-center bg-auth-gradient p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
         className="w-full max-w-md"
       >
-        <Card className="border-none shadow-lg">
+        <Card className="border-none shadow-xl bg-white/95 backdrop-blur-sm">
           <CardHeader className="space-y-1 text-center">
-            <CardTitle className="text-2xl">পাসওয়ার্ড ভুলে গেছেন?</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-2xl font-bold text-primary">পাসওয়ার্ড ভুলে গেছেন?</CardTitle>
+            <CardDescription className="text-muted">
               আপনার ইমেইল এড্রেস দিন, আমরা আপনাকে একটি রিসেট লিংক পাঠাবো
             </CardDescription>
           </CardHeader>
@@ -56,23 +56,23 @@ const ForgotPassword = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full"
+                  className="w-full bg-white/50 border-gray-200 focus:border-primary focus:ring-primary"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full py-5 text-base font-medium transition-all duration-200 hover:opacity-90"
+                className="w-full py-5 text-base font-medium bg-primary hover:bg-primary-hover text-white transition-all duration-200"
                 disabled={loading}
               >
                 {loading ? "লোড হচ্ছে..." : "রিসেট লিংক পাঠান"}
               </Button>
 
-              <div className="text-center text-sm text-muted-foreground mt-6">
+              <div className="text-center text-sm text-muted mt-6">
                 <Button
                   variant="link"
                   onClick={() => navigate("/auth/login")}
-                  className="p-0 h-auto font-normal text-sm"
+                  className="p-0 h-auto font-normal text-sm text-secondary hover:text-secondary-hover"
                 >
                   লগইন পেজে ফিরে যান
                 </Button>

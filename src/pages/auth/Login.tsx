@@ -58,17 +58,17 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+    <div className="min-h-screen flex items-center justify-center bg-auth-gradient p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
         className="w-full max-w-md"
       >
-        <Card className="border-none shadow-lg">
+        <Card className="border-none shadow-xl bg-white/95 backdrop-blur-sm">
           <CardHeader className="space-y-1 text-center">
-            <CardTitle className="text-2xl">লগইন করুন</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-2xl font-bold text-primary">লগইন করুন</CardTitle>
+            <CardDescription className="text-muted">
               আপনার অ্যাকাউন্টে প্রবেশ করুন
             </CardDescription>
           </CardHeader>
@@ -81,7 +81,7 @@ const Login = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full"
+                  className="w-full bg-white/50 border-gray-200 focus:border-primary focus:ring-primary"
                 />
                 <Input
                   type="password"
@@ -89,13 +89,13 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full"
+                  className="w-full bg-white/50 border-gray-200 focus:border-primary focus:ring-primary"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full py-5 text-base font-medium transition-all duration-200 hover:opacity-90"
+                className="w-full py-5 text-base font-medium bg-primary hover:bg-primary-hover text-white transition-all duration-200"
                 disabled={loading}
               >
                 {loading ? "লোড হচ্ছে..." : "লগইন"}
@@ -106,7 +106,7 @@ const Login = () => {
                   <Separator className="w-full" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-background px-2 text-muted-foreground">
+                  <span className="bg-white px-2 text-muted">
                     অথবা
                   </span>
                 </div>
@@ -115,7 +115,7 @@ const Login = () => {
               <Button
                 type="button"
                 variant="outline"
-                className="w-full py-5 text-base font-medium"
+                className="w-full py-5 text-base font-medium border-2 hover:bg-gray-50 transition-all duration-200"
                 onClick={handleGoogleLogin}
               >
                 <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
@@ -139,20 +139,19 @@ const Login = () => {
                 গুগল দিয়ে লগইন করুন
               </Button>
 
-              <div className="text-center text-sm text-muted-foreground mt-6">
-                অ্যাকাউন্ট নেই?{" "}
+              <div className="text-center text-sm text-muted mt-6 space-x-2">
                 <Button
                   variant="link"
                   onClick={() => navigate("/auth/register")}
-                  className="p-0 h-auto font-normal text-sm"
+                  className="p-0 h-auto font-normal text-sm text-secondary hover:text-secondary-hover"
                 >
                   রেজিস্টার করুন
                 </Button>
-                <span className="mx-2">•</span>
+                <span className="text-muted">•</span>
                 <Button
                   variant="link"
                   onClick={() => navigate("/auth/forgot-password")}
-                  className="p-0 h-auto font-normal text-sm"
+                  className="p-0 h-auto font-normal text-sm text-secondary hover:text-secondary-hover"
                 >
                   পাসওয়ার্ড ভুলে গেছেন?
                 </Button>
